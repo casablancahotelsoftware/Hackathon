@@ -1,0 +1,90 @@
+﻿@using Microsoft.AspNetCore.SignalR.Client;
+@using VitualReception.Domain.Model;
+
+<PageTitle>Index</PageTitle>
+
+<div class="container-fluid d-flex flex-column h-100">
+    <div class="row mt-2">
+        <h4>@Chat.Name</h4>
+    </div>
+    @foreach(var message in _messages)
+    {
+
+        <div class="row mt-2 @(message.CreatedByMember == Guid.Parse(MemberId) ? "justify-content-end" : "justify-content-start" )">
+            <div class="w-auto px-4 py-2 @(message.CreatedByMember == Guid.Parse(MemberId) ? "bg-secondary" : "bg-info" )" style="color: white; border: 1px solid @(message.CreatedByMember == Guid.Parse(MemberId) ? "#f8f9fa" : "#0dcaf0" ); border-radius: 15px">@message.Content</div>
+        </div>
+    }
+    <div class="row mt-auto">
+        <div class="col-12">
+            <div class="input-group mb-3">
+                <input @bind="_messageContent" type="text" class="form-control" placeholder="Nachricht" aria-describedby="chat-send-button">
+                <button @onclick="Send" class="btn btn-outline-secondary @(!IsConnected ? "disabled" : null)" type="button" id="chat-send-button">Senden</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+
+    #region parameters
+
+    [Parameter]
+    public string MemberId { get; set; }
+
+    [Parameter]
+    public Chat Chat { get; set; }
+
+    #endregion
+
+    #region fields
+
+    private HubConnection _hubConnection;
+    private string _messageContent = string.Empty;
+    private List<Message> _messages = new();
+
+    #endregion
+
+    protected override async Task OnInitializedAsync()
+    {
+        _hubConnection = new HubConnectionBuilder()
+            .WithUrl($"http://localhost:5000/hubs/chat?chatId={Chat.Id}&memberId={MemberId}")
+            .WithAutomaticReconnect()
+            .Build();
+
+        _hubConnection.On<Message>("ReceiveMessage", (message) =>
+        {
+            _messages.Add(message);
+            InvokeAsync(StateHasChanged);
+        });
+
+        if (Chat.Messages != null)
+        {
+            foreach (var message in Chat.Messages.OrderBy(message => message.CreatedDateTime))
+            { _messages.Add(message); }
+        }
+
+        await _hubConnection.StartAsync();
+    }
+
+    // Send the message over SignalR
+    private async Task Send()
+    {
+        var message = Chat.CreateMessage(Guid.Parse(MemberId), _messageContent);
+
+        _messageContent = string.Empty;
+
+        if (_hubConnection is not null)
+        { await _hubConnection.SendAsync("WriteMessage", Chat.Id, message); }
+    }
+
+    public bool IsConnected => _hubConnection.State == HubConnectionState.Connected;
+
+    // Dispose HubConnection
+    public async ValueTask DisposeAsync()
+    {
+        if (_hubConnection is not null)
+        {
+            await _hubConnection.DisposeAsync();
+        }
+    }
+}

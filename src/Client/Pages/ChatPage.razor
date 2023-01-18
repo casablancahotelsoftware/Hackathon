@@ -1,0 +1,27 @@
+﻿@page "/chat/{ChatId}/{MemberId}"
+@using VitualReception.Domain.Model;
+
+@inject IChatRepository _chatRepository;
+
+<ChatComponent MemberId="@MemberId" Chat="_chat" />
+
+@code {
+    #region parameters
+
+    [Parameter]
+    public string ChatId { get; set; }
+
+    [Parameter]
+    public string MemberId { get; set; }
+
+    #endregion
+
+    #region fields
+
+    private Chat _chat;
+
+    #endregion
+
+    protected override async Task OnInitializedAsync()
+    { _chat = await _chatRepository.FindAsync(Guid.Parse(ChatId)); }
+}

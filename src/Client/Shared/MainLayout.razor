@@ -1,0 +1,20 @@
+﻿@inherits LayoutComponentBase
+
+<div class="topbar shadow-sm">
+    <nav class="navbar navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="">Chat Applikation</a>
+        </div>
+    </nav>
+</div>
+<div class="page">
+    <div class="sidebar bg-light shadow-sm">
+        <NavMenu />
+    </div>
+
+    <div class="content">
+        <main>     
+            @Body
+        </main>
+    </div>
+</div>

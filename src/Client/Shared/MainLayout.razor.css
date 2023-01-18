@@ -1,0 +1,17 @@
+.page {
+    display: flex;
+    height: calc(100% - 70px);
+}
+
+
+.sidebar {
+    min-width: 200px;
+}
+
+.content {
+    width: 100%;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 5px;
+}

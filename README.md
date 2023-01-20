@@ -24,22 +24,22 @@ ASP.NET Core in Kombination mit Blazor und SignalR bietet ein leistungsstarkes F
 ## [Dependency Injection](./docs/DependencyInjection.md)
 ASP.NET Core bietet integrierte Unterstützung für Dependency Injection, die die einfache Verwaltung von Abhängigkeiten zwischen Komponenten in der Anwendung ermöglicht. Dies erleichtert den Austausch von Komponenten zu Testzwecken oder zur Änderung der Implementierung eines Dienstes.
 
-## Konfiguration 
+## [Konfiguration](./docs/Configuration.md) 
 ASP.NET Core verwendet ein Konfigurationssystem, das eine einfache Verwaltung von Anwendungseinstellungen wie Datenbankverbindungszeichenfolgen, Anwendungsschlüsseln und anderen Einstellungen ermöglicht. Dieses Konfigurationssystem kann leicht mit verschiedenen Quellen wie json, xml und Umgebungsvariablen integriert werden.
 
-## Controllers 
+## [Controllers](./docs/Controllers.md) 
 ASP.NET Core verwendet Controller, um eingehende HTTP-Anfragen zu verarbeiten und Antworten zurückzugeben. Controller sind für die Handhabung der Logik der Anwendung und die Interaktion mit anderen Komponenten wie Modellen und Diensten verantwortlich.
 
-## Models 
+## [Models](./docs/Models.md) 
 Models repräsentieren die Daten und die Geschäftslogik der Anwendung. Sie sind für die Interaktion mit der Datenbank, die Validierung und jede andere Logik im Zusammenhang mit den Daten verantwortlich.
 
-## DDD (Domain-Driven Design) 
+## [DDD (Domain-Driven Design)](./docs/DomainDrivenDesign.md)
 DDD ist eine Designphilosophie, die sich auf die Modellierung der Problemdomäne, die Erstellung eines umfassenden Modells des Problemraums und die Konzentration auf die Geschäftslogik der Anwendung konzentriert. Dies hilft dabei, eine klare Trennung von Belangen zu schaffen und den Code besser wartbar und testbar zu machen.
 
-## SignalR 
+## [SignalR](./docs/SignalR.md) 
 SignalR ist eine Open-Source-Bibliothek, die das Hinzufügen von Echtzeitfunktionen zu Webanwendungen erleichtert. Sie ermöglicht die Echtzeit-Kommunikation zwischen Server und Client und bietet Funktionen wie Live-Updates, Benachrichtigungen und Zusammenarbeit in Echtzeit.
 
-## Blazor 
+## [Blazor](./docs/Blazor.md) 
 Blazor ist ein Framework für die Erstellung von Webanwendungen mit C# und Razor. Es ermöglicht die Erstellung von clientseitigen Webanwendungen mit C# und Razor und ermöglicht die Verwendung bestehender .NET-Bibliotheken, wodurch die gemeinsame Nutzung von Code zwischen Client und Server ermöglicht wird.
 
 Insgesamt bietet diese Kombination von Technologien ein leistungsfähiges und flexibles Framework für die Erstellung von Webanwendungen mit vielen integrierten Funktionen und Tools, die die Entwicklung effizienter und effektiver machen.

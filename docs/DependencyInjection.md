@@ -37,9 +37,9 @@ public void ConfigureServices(IServiceCollection services) {
 
 ```
 
-In diesem Beispiel hat die Klasse __MyController__ eine Abhängigkeit von der Schnittstelle __IService__. Anstatt dass der Controller eine Instanz des Dienstes erstellt, wird der Dienst über seinen Konstruktor in den Controller injiziert. Der Dienst wird in der __ConfigureServices-Methode__ der __Startup-Klasse__ registriert, wodurch das Dependency Injection-System angewiesen wird, die Service-Klasse zu verwenden, wenn eine Instanz der __IService-Schnittstelle__ benötigt wird.
+In diesem Beispiel hat die Klasse ```MyController``` eine Abhängigkeit von der Schnittstelle ```IService```. Anstatt dass der Controller eine Instanz des Dienstes erstellt, wird der Dienst über seinen Konstruktor in den Controller injiziert. Der Dienst wird in der ```ConfigureServices-Methode``` der ```Startup-Klasse``` registriert, wodurch das Dependency Injection-System angewiesen wird, die Service-Klasse zu verwenden, wenn eine Instanz der ```IService-Schnittstelle``` benötigt wird.
 
-Die __AddTransient-Methode__ wird verwendet, um den Dienst zu registrieren, was bedeutet, dass jedes Mal, wenn er angefordert wird, eine neue Instanz des Dienstes erstellt wird. Es gibt noch weitere Methoden wie __AddSingleton__ und __AddScoped__, die eine einzelne Instanz des Dienstes für die gesamte Anwendung bzw. für jede Anforderung erstellen.
+Die ```AddTransient-Methode``` wird verwendet, um den Dienst zu registrieren, was bedeutet, dass jedes Mal, wenn er angefordert wird, eine neue Instanz des Dienstes erstellt wird. Es gibt noch weitere Methoden wie ```AddSingleton``` und ```AddScoped```, die eine einzelne Instanz des Dienstes für die gesamte Anwendung bzw. für jede Anforderung erstellen.
 
 Auf diese Weise kann der Controller lockerer an die spezifische Implementierung des Dienstes gekoppelt werden, so dass es einfacher ist, die Implementierung des Dienstes zu ändern, ohne den Controller zu beeinflussen. Auch das Testen des Controllers wird dadurch erleichtert, da ein Mock-Service zu Testzwecken einfach injiziert werden kann.
 
@@ -64,7 +64,7 @@ Bei der Registrierung eines Dienstes kann seine Lebensdauer mit der entsprechend
 
 Dependency Injection kann dazu beitragen, die Tests von Software zu verbessern, indem sie die Erstellung isolierter, testbarer Codeeinheiten ermöglicht. Dies kann durch die Verwendung von Dependency-Injection-Frameworks wie der integrierten Dependency Injection (DI) in ASP.NET Core erreicht werden, um die Abhängigkeiten einer Klasse zur Laufzeit zu erstellen und zu konfigurieren, anstatt die Klasse ihre eigenen Abhängigkeiten erstellen oder anderweitig verwalten zu lassen.
 
-Hier ist ein Beispiel für eine Klasse __CustomerService__, die eine Abhängigkeit von einer Datenzugriffsklasse __ICustomerRepository__ hat:
+Hier ist ein Beispiel für eine Klasse ```CustomerService```, die eine Abhängigkeit von einer Datenzugriffsklasse ```ICustomerRepository``` hat:
 
 ```csharp
 

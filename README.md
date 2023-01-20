@@ -45,3 +45,66 @@ Blazor ist ein Framework für die Erstellung von Webanwendungen mit C# und Razor
 Insgesamt bietet diese Kombination von Technologien ein leistungsfähiges und flexibles Framework für die Erstellung von Webanwendungen mit vielen integrierten Funktionen und Tools, die die Entwicklung effizienter und effektiver machen.
 
 
+# Getting Started
+
+Die API kann mit dem nachfolgenden Befehl gestartet werden:
+
+``` sh
+
+$ cd ./src/Server
+
+$ dotnet run  
+
+$ curl --location --request GET 'http://localhost:5000/chat'
+
+```
+
+Der von der API zurügkgeliferte Response:
+
+```json
+
+[
+  {
+    "id": "1a5d8570-e1c4-43da-9463-f703e5098f38",
+    "name": "Maria Mustergast",
+    "messages": [
+      {
+        "id": "b4e62e72-7908-42fe-ab73-e01759483bc0",
+        "content": "Sehr geehrte Damen und Herren, ich möchte mich zu meiner Buchung informieren",
+        "createdDateTime": "2023-01-20T11:29:09.2393729+01:00",
+        "createdByMember": "e77d4178-5e50-419e-8c5f-7d148b7bf5e8"
+      },
+      {
+        "id": "de795c81-cd2b-4a4e-b53f-780e3a93f6a8",
+        "content": "Können Sie mir bitte Ihre Buchungnummer zukommen lassen",
+        "createdDateTime": "2023-01-20T11:29:09.2446037+01:00",
+        "createdByMember": "e77d4178-5e50-419e-8c5f-7d148b7bf5e7"
+      }
+    ],
+    "members": [
+      {
+        "id": "e77d4178-5e50-419e-8c5f-7d148b7bf5e8",
+        "name": "Max Mustergast"
+      },
+      {
+        "id": "e77d4178-5e50-419e-8c5f-7d148b7bf5e7",
+        "name": "Maria Muterrezeptionistin"
+      }
+    ]
+  }
+]
+
+
+```
+
+Das Frontend kann mit nachfolgendem Befehl gestartet werden:
+
+``` sh
+
+$ cd ./src/Client
+
+$ dotnet run  
+
+```
+
+Die Applikation kann dann über die Url ```http://localhost:5001``` aufgerufen werden.

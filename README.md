@@ -7,7 +7,7 @@ Das Ziel dieses Hackathons ist es, euch die Möglichkeit zu geben, neue Technolo
 Während der gesamten Veranstaltung habt ihr Zugang zu Mentoren und Experten auf diesem Gebiet, die euch bei der Umsetzung eurer Ideen unterstützen werden. Diese Veranstaltung bietet dir eine hervorragende Gelegenheit, um zu lernen, zu wachsen und mit anderen zusammenzuarbeiten. Wir sind gespannt auf die kreativen und innovativen Lösungen, die aus dieser Veranstaltung hervorgehen werden!
 
 
-# Das Skeleton Projek
+# Das Skeleton Projekt
 
 Ein Skelettprojekt ist eine vorgefertigte Projektstruktur, die eine grundlegende Basis für die Entwicklung einer Softwareanwendung bietet. In diesem Fall wird das Skelettprojekt auf ASP.NET Core und Blazor basieren und euch einen Ausgangspunkt für die Entwicklung einer Webanwendung bieten.
 
@@ -17,7 +17,7 @@ Darüber hinaus enthält es vorkonfigurierte Abhängigkeiten wie das ASP.NET Cor
 
 Insgesamt bietet das Skeleton-Projekt eine solide Grundlage für die Entwicklung eurer Webanwendung und hilft euch den Fokus auf die Implementierung eurer spezifischen Merkmale und Funktionen zu konzentrieren, anstatt Zeit auf die Einrichtung der Grundstruktur zu verwenden.
 
-# Der technologie Stack
+# Der Technologie-Stack
 
 ASP.NET Core in Kombination mit Blazor und SignalR bietet ein leistungsstarkes Framework für die Erstellung von Webanwendungen. Zu den wichtigsten Komponenten dieser Kombination gehören:
 
